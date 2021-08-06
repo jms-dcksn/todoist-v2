@@ -8,12 +8,14 @@
  */
 
 /**
- * 
+ * @author James Dickson
  */
 package com.automationanywhere.botcommand.samples.commands.basic;
 
 import static com.automationanywhere.commandsdk.model.AttributeType.CREDENTIAL;
 import static com.automationanywhere.commandsdk.model.AttributeType.TEXT;
+import static com.automationanywhere.commandsdk.model.DataType.STRING;
+
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import java.util.Map;
 
@@ -52,7 +54,7 @@ public class SessionDemo {
 
 	@Execute
 	public void execute(@Idx(index = "1", type = TEXT)
-	@Pkg(label = "Start Session", default_value = "Default")
+	@Pkg(label = "Start Session", default_value_type = STRING, default_value = "Default")
 	@NotEmpty String name,
 	@Idx(index = "2", type = CREDENTIAL) @Pkg(label = "Account Token") @NotEmpty SecureString token) {
 		String accountToken=null;

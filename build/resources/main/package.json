@@ -4,8 +4,8 @@
     "description": "[[description]]",
     "group": "com.automationanywhere",
     "artifactName": "Todoist",
-    "packageVersion": "1.2.0-20210804-170011",
-    "codeVersion": "1.2.0-20210804-170011",
+    "packageVersion": "1.2.0-20210806-093734",
+    "codeVersion": "1.2.0-20210806-093734",
     "author": "",
     "commands": [
         {
@@ -308,12 +308,19 @@
             "minimumControlRoomVersion": "8750",
             "minimumBotAgentVersion": "20.11",
             "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.SessionDemoCommand",
-            "icon": "sample.svg",
+            "icon": "todo.svg",
+            "textColor": "#7B848B",
+            "backgroundColor": "#a6a6a6",
+            "comment": true,
             "attributes": [
                 {
                     "name": "name",
-                    "label": "[[SessionDemo.name.label]]",
+                    "label": "Start Session",
                     "type": "TEXT",
+                    "defaultValue": {
+                        "string": "Default",
+                        "type": "STRING"
+                    },
                     "rules": [
                         {
                             "name": "NOT_EMPTY"
@@ -327,6 +334,56 @@
                     "rules": [
                         {
                             "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "triggers": [
+        {
+            "name": "todoisttasktrigger",
+            "label": "Task Trigger",
+            "description": "Task Trigger",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.TaskTriggerTrigger",
+            "icon": "todo.svg",
+            "returnType": "RECORD",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "",
+            "returnRequired": false,
+            "returnDescription": "Available keys: triggerType, id",
+            "returnName": "TriggerData",
+            "attributes": [
+                {
+                    "name": "token",
+                    "label": "API token",
+                    "type": "CREDENTIAL",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "interval",
+                    "label": "Please provide the interval to trigger in seconds",
+                    "type": "NUMBER",
+                    "defaultValue": {
+                        "number": "120",
+                        "type": "NUMBER"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "GREATER_THAN",
+                            "value": "0"
+                        },
+                        {
+                            "name": "NUMBER_INTEGER"
                         }
                     ]
                 }
