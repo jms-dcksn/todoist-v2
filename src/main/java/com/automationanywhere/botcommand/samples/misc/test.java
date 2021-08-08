@@ -47,11 +47,11 @@ public class test {
         String taskId = "5050852812";
         String taskName = "Prep to crush it on Friday again!";
         String dueDate = "2021-08-08";
-        Integer numPrio = 4;
+        Integer numPrio = 3;
 
-        //JSONObject details = TodoistActions.CreateTask(token, taskName, null, dueDate, numPrio);
+        JSONObject details = TodoistActions.CreateTask(token, taskName, null, dueDate, numPrio);
 
-        TodoistActions.CloseTask(token, "5054012585");
+        TodoistActions.UpdateTask(token, details.get("id").toString(), "A modified task", "2021-08-09", 4);
 
         //System.out.println(details.get("id").toString());
 

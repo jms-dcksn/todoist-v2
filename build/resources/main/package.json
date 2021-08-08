@@ -4,10 +4,49 @@
     "description": "[[description]]",
     "group": "com.automationanywhere",
     "artifactName": "Todoist",
-    "packageVersion": "1.2.0-20210806-093734",
-    "codeVersion": "1.2.0-20210806-093734",
+    "packageVersion": "1.2.0-20210808-141142",
+    "codeVersion": "1.2.0-20210808-141142",
     "author": "",
     "commands": [
+        {
+            "name": "CloseTask",
+            "label": "Close Task",
+            "description": "Closes a Todoist task",
+            "nodeLabel": "Closes task in session {{sessionName}}",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.CloseTaskCommand",
+            "icon": "todo.svg",
+            "textColor": "#7B848B",
+            "backgroundColor": "#a6a6a6",
+            "comment": true,
+            "attributes": [
+                {
+                    "name": "sessionName",
+                    "label": "Session name",
+                    "type": "TEXT",
+                    "defaultValue": {
+                        "string": "Default",
+                        "type": "STRING"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "taskId",
+                    "label": "Task ID",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "CreateProject",
             "label": "Create Project",
@@ -334,6 +373,96 @@
                     "rules": [
                         {
                             "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UpdateTask",
+            "label": "Update Task",
+            "description": "Updates a Todoist task",
+            "nodeLabel": "Update task in session {{sessionName}}",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.UpdateTaskCommand",
+            "icon": "todo.svg",
+            "textColor": "#7B848B",
+            "backgroundColor": "#a6a6a6",
+            "comment": true,
+            "attributes": [
+                {
+                    "name": "sessionName",
+                    "label": "Session name",
+                    "type": "TEXT",
+                    "defaultValue": {
+                        "string": "Default",
+                        "type": "STRING"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "taskId",
+                    "label": "Task ID",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "nameGroup",
+                    "label": "Parameters to Update",
+                    "type": "GROUP",
+                    "attributes": [
+                        {
+                            "name": "taskName",
+                            "label": "Task Name",
+                            "type": "TEXT",
+                            "rules": [
+                                {
+                                    "name": "NOT_EMPTY"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dueDate",
+                            "label": "Due Date",
+                            "description": "input format: YYYY-MM-DD",
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                {
+                    "name": "priority",
+                    "label": "Priority",
+                    "description": "Enter priority level 1, 2, 3 or 4",
+                    "type": "SELECT",
+                    "defaultValue": {
+                        "string": "4",
+                        "type": "STRING"
+                    },
+                    "options": [
+                        {
+                            "label": "1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
                         }
                     ]
                 }
