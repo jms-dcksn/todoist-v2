@@ -1,6 +1,7 @@
 package com.automationanywhere.botcommand.samples.commands.basic;
 
 import com.automationanywhere.botcommand.samples.Utils.HTTPRequest;
+import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import com.automationanywhere.botcommand.data.Value;
 import com.automationanywhere.botcommand.data.impl.DictionaryValue;
@@ -12,6 +13,7 @@ import com.automationanywhere.commandsdk.i18n.Messages;
 import com.automationanywhere.commandsdk.i18n.MessagesFactory;
 import com.automationanywhere.commandsdk.model.AttributeType;
 import com.automationanywhere.commandsdk.model.DataType;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -82,7 +84,7 @@ public class CreateTask {
         TodoistServer todoistServer = (TodoistServer) this.sessionMap.get(sessionName);
         String token = todoistServer.getToken();
 
-        String url = "https://api.todoist.com/rest/v1/tasks";
+        /*String url = "https://api.todoist.com/rest/v1/tasks";
         String auth = "Bearer " + token;
         JSONObject jsonBody = new JSONObject();
 
@@ -103,7 +105,10 @@ public class CreateTask {
         }
 
         Object obj = new JSONParser().parse(response);
-        JSONObject details = (JSONObject) obj;
+        JSONObject details = (JSONObject) obj;*/
+
+        JSONObject details = TodoistActions.CreateTask(token, taskName, lProjId, dueDate, numPrio);
+
         Map<String, Value> ResMap = new LinkedHashMap();
         ResMap.put("id", new StringValue(details.get("id").toString()));
         ResMap.put("url", new StringValue(details.get("url").toString()));

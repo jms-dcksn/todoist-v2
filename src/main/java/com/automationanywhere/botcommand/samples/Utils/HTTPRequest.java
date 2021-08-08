@@ -64,7 +64,7 @@ public class HTTPRequest {
         outStream.close();
         connection.connect();
         int responseCode = connection.getResponseCode();
-        if (responseCode == HttpURLConnection.HTTP_OK) {
+        if (responseCode == HttpURLConnection.HTTP_OK || responseCode == 204) {
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
             StringBuffer response = new StringBuffer();
