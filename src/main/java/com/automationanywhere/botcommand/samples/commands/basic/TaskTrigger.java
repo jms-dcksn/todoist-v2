@@ -6,7 +6,7 @@ import com.automationanywhere.botcommand.data.impl.RecordValue;
 import com.automationanywhere.botcommand.data.impl.StringValue;
 import com.automationanywhere.botcommand.data.model.Schema;
 import com.automationanywhere.botcommand.data.model.record.Record;
-import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
+import com.automationanywhere.botcommand.samples.Utils.TodoistTaskActions;
 import com.automationanywhere.commandsdk.annotations.*;
 
 import static com.automationanywhere.commandsdk.model.DataType.RECORD;
@@ -21,7 +21,6 @@ import com.automationanywhere.core.security.SecureString;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -57,7 +56,7 @@ public class TaskTrigger {
                                      Double interval) {
 
         String strToken = token.getInsecureString();
-        JSONArray total = TodoistActions.getTasks(strToken);
+        JSONArray total = TodoistTaskActions.getTasks(strToken);
         //Get the last object
         JSONObject lastTask = (JSONObject) total.get(total.size()-1);
         final Long[] lastTaskId = {(Long) lastTask.get("id")};
@@ -65,7 +64,7 @@ public class TaskTrigger {
 
             @Override
             public void run() {
-                JSONArray total = TodoistActions.getTasks(strToken);
+                JSONArray total = TodoistTaskActions.getTasks(strToken);
                 //Get the last object
                 JSONObject lastTask = (JSONObject) total.get(total.size()-1);
                 Long currentTaskid = (Long) lastTask.get("id");

@@ -1,21 +1,6 @@
 package com.automationanywhere.botcommand.samples.misc;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import com.automationanywhere.botcommand.data.Value;
-import com.automationanywhere.botcommand.data.impl.StringValue;
-import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import com.automationanywhere.botcommand.samples.Utils.TodoistTaskActions;
 
 
 public class test {
@@ -49,9 +34,9 @@ public class test {
         String dueDate = "2021-08-08";
         Integer numPrio = 3;
 
-        JSONObject details = TodoistActions.CreateTask(token, taskName, null, dueDate, numPrio);
+        //JSONObject details = TodoistActions.CreateTask(token, taskName, null, dueDate, numPrio);
 
-        TodoistActions.UpdateTask(token, details.get("id").toString(), "A modified task", "2021-08-09", 4);
+        TodoistTaskActions.DeleteTask(token, "5056557146");
 
         //System.out.println(details.get("id").toString());
 

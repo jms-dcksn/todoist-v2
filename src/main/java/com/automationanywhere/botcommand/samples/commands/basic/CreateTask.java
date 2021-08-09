@@ -1,7 +1,6 @@
 package com.automationanywhere.botcommand.samples.commands.basic;
 
-import com.automationanywhere.botcommand.samples.Utils.HTTPRequest;
-import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
+import com.automationanywhere.botcommand.samples.Utils.TodoistTaskActions;
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import com.automationanywhere.botcommand.data.Value;
 import com.automationanywhere.botcommand.data.impl.DictionaryValue;
@@ -9,20 +8,15 @@ import com.automationanywhere.botcommand.data.impl.StringValue;
 import com.automationanywhere.botcommand.exception.BotCommandException;
 import com.automationanywhere.commandsdk.annotations.*;
 import com.automationanywhere.commandsdk.annotations.rules.NotEmpty;
-import com.automationanywhere.commandsdk.i18n.Messages;
-import com.automationanywhere.commandsdk.i18n.MessagesFactory;
 import com.automationanywhere.commandsdk.model.AttributeType;
 import com.automationanywhere.commandsdk.model.DataType;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.automationanywhere.commandsdk.model.AttributeType.TEXT;
-import static com.automationanywhere.commandsdk.model.DataType.NUMBER;
 import static com.automationanywhere.commandsdk.model.DataType.STRING;
 
 /**
@@ -107,7 +101,7 @@ public class CreateTask {
         Object obj = new JSONParser().parse(response);
         JSONObject details = (JSONObject) obj;*/
 
-        JSONObject details = TodoistActions.CreateTask(token, taskName, lProjId, dueDate, numPrio);
+        JSONObject details = TodoistTaskActions.CreateTask(token, taskName, lProjId, dueDate, numPrio);
 
         Map<String, Value> ResMap = new LinkedHashMap();
         ResMap.put("id", new StringValue(details.get("id").toString()));

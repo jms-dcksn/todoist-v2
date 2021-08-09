@@ -1,15 +1,13 @@
 package com.automationanywhere.botcommand.samples.commands.basic;
 
-import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
+import com.automationanywhere.botcommand.samples.Utils.TodoistTaskActions;
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import com.automationanywhere.commandsdk.annotations.*;
 import com.automationanywhere.commandsdk.annotations.rules.NotEmpty;
-import com.automationanywhere.commandsdk.model.AttributeType;
 import org.json.simple.parser.ParseException;
 
 import java.util.Map;
 
-import static com.automationanywhere.commandsdk.model.AttributeType.GROUP;
 import static com.automationanywhere.commandsdk.model.AttributeType.TEXT;
 import static com.automationanywhere.commandsdk.model.DataType.STRING;
 
@@ -42,7 +40,7 @@ public class CloseTask {
         TodoistServer todoistServer = (TodoistServer) this.sessionMap.get(sessionName);
         String token = todoistServer.getToken();
 
-        TodoistActions.CloseTask(token, taskId);
+        TodoistTaskActions.CloseTask(token, taskId);
     }
     public void setSessionMap(Map<String, Object> sessionMap) {
         this.sessionMap = sessionMap;

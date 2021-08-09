@@ -1,5 +1,6 @@
 package com.automationanywhere.botcommand.samples.commands.basic;
 import com.automationanywhere.botcommand.samples.Utils.HTTPRequest;
+import com.automationanywhere.botcommand.samples.Utils.TodoistProjectActions;
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import com.automationanywhere.botcommand.data.Value;
 import com.automationanywhere.botcommand.data.impl.DictionaryValue;
@@ -66,27 +67,7 @@ public class CreateProject {
         TodoistServer todoistServer = (TodoistServer) this.sessionMap.get(sessionName);
         String token = todoistServer.getToken();
 
-        String url = "https://api.todoist.com/rest/v1/projects";
-        String auth = "Bearer " + token;
-        JSONObject jsonBody = new JSONObject();
-
-        jsonBody.put("name", projectName);
-        jsonBody.put("parent_id", lParentId);
-        jsonBody.put("favorite", favorite);
-        String response = "";
-
-        try {
-            response = HTTPRequest.POST(auth, url, jsonBody.toString());
-            if (response.contains("An error occurred")) {
-                throw new BotCommandException(response);
-            }
-        }
-        catch(Exception e){
-            throw new BotCommandException("An error occurred when attempting to reach the server. Please try again.");
-        }
-
-        Object obj = new JSONParser().parse(response);
-        JSONObject details = (JSONObject) obj;
+        JSONObject details = TodoistProjectActions.CreateProject(token, projectName, lParentId, favorite);
         Map<String, Value> ResMap = new LinkedHashMap();
         ResMap.put("id", new StringValue(details.get("id").toString()));
         ResMap.put("url", new StringValue(details.get("url").toString()));

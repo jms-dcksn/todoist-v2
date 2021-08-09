@@ -1,20 +1,14 @@
 package com.automationanywhere.botcommand.samples.commands.basic;
 
 import static com.automationanywhere.commandsdk.model.AttributeType.GROUP;
-import com.automationanywhere.botcommand.data.Value;
-import com.automationanywhere.botcommand.data.impl.DictionaryValue;
-import com.automationanywhere.botcommand.data.impl.StringValue;
-import com.automationanywhere.botcommand.exception.BotCommandException;
-import com.automationanywhere.botcommand.samples.Utils.TodoistActions;
+
+import com.automationanywhere.botcommand.samples.Utils.TodoistTaskActions;
 import com.automationanywhere.botcommand.samples.Utils.TodoistServer;
 import com.automationanywhere.commandsdk.annotations.*;
 import com.automationanywhere.commandsdk.annotations.rules.NotEmpty;
 import com.automationanywhere.commandsdk.model.AttributeType;
-import com.automationanywhere.commandsdk.model.DataType;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.automationanywhere.commandsdk.model.AttributeType.TEXT;
@@ -73,7 +67,7 @@ public class UpdateTask {
         TodoistServer todoistServer = (TodoistServer) this.sessionMap.get(sessionName);
         String token = todoistServer.getToken();
 
-        TodoistActions.UpdateTask(token, taskId, taskName, dueDate, numPrio);
+        TodoistTaskActions.UpdateTask(token, taskId, taskName, dueDate, numPrio);
     }
     public void setSessionMap(Map<String, Object> sessionMap) {
         this.sessionMap = sessionMap;
