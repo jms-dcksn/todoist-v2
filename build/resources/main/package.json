@@ -4,8 +4,8 @@
     "description": "[[description]]",
     "group": "com.automationanywhere",
     "artifactName": "Todoist",
-    "packageVersion": "1.2.0-20210809-151922",
-    "codeVersion": "1.2.0-20210809-151922",
+    "packageVersion": "1.2.0-20210809-160306",
+    "codeVersion": "1.2.0-20210809-160306",
     "author": "",
     "commands": [
         {

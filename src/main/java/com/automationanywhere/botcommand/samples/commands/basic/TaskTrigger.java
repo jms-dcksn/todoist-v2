@@ -48,7 +48,7 @@ public class TaskTrigger {
     @StartListen
     public void startTrigger(
             @Idx(index = "1", type = AttributeType.CREDENTIAL) @Pkg(label = "API token",  default_value_type = STRING) @NotEmpty SecureString token,
-            @Idx(index = "2", type = AttributeType.NUMBER)
+            @Idx(index = "3", type = AttributeType.NUMBER)
                              @Pkg(label = "Please provide the interval to trigger in seconds", default_value = "120", default_value_type = DataType.NUMBER)
                              @GreaterThan("0")
                              @NumberInteger
