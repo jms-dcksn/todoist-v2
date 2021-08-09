@@ -29,26 +29,20 @@ import com.automationanywhere.commandsdk.annotations.rules.NotEmpty;
 import com.automationanywhere.core.security.SecureString;
 
 /**
- * Sessions provide a mechanism to communicate between actions of the same
- * package. This means that sessions belonging to other packages are not visible
- * to action.
- * <p>
- * In this example we will check if a session( we will use string objects,
- * though in real actions a more complicated Object might be used) exists and if
- * not we will add it.
- * 
- * @author Raj Singh Sisodia
- *
+ * @author James Dickson
  */
 @BotCommand
-@CommandPkg(label = "Start Session", description = "Starts Session", icon = "todo.svg", name = "sessionDemo",
-		comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6")
+@CommandPkg(label = "Start Session",
+		description = "Starts Session",
+		icon = "todo.svg",
+		name = "startSession",
+		node_label = "Start Session {{sessionName}}",
+		group_label="Admin",
+		comment = true ,
+		text_color = "#7B848B" ,
+		background_color =  "#a6a6a6")
 public class SessionDemo {
 
-	// Sessions are provided as a Map. Actions can add or remove entries in this
-	// Map.
-	// The choice to reuse/overwrite/delete/add any Object in this Map belongs to
-	// the actions, and the framework makes no assumption regarding it.
 	@Sessions
 	private Map<String, Object> sessionMap;
 
@@ -68,7 +62,5 @@ public class SessionDemo {
 	public void setSessionMap(Map<String, Object> sessionMap) {
 		this.sessionMap = sessionMap;
 	}
-
-
 
 }

@@ -33,10 +33,18 @@ import org.json.simple.parser.*;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "GetActiveTasks", label = "Get Tasks",
-        node_label = "Get list of tasks in session {{sessionName}}", description = "Gets list of Todoist active tasks",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6",
-        return_label = "Assign output to a table variable", return_type = DataType.TABLE, return_required = true,
+        name = "GetActiveTasks",
+        label = "Get Tasks",
+        node_label = "Get list of tasks in session {{sessionName}}",
+        group_label = "Tasks",
+        description = "Gets list of Todoist active tasks",
+        icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B" ,
+        background_color =  "#a6a6a6",
+        return_label = "Assign output to a table variable",
+        return_type = DataType.TABLE,
+        return_required = true,
         return_description = "Outputs table with task id, name, priority, due date and url")
 
 public class GetActiveTasks {

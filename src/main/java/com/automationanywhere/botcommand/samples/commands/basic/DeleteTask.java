@@ -20,9 +20,15 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "DeleteTask", label = "Delete Task",
-        node_label = "Deletes task in session {{sessionName}}", description = "Deletes a Todoist task",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6")
+        name = "DeleteTask",
+        label = "Delete Task",
+        node_label = "Deletes task in session {{sessionName}}",
+        group_label = "Tasks",
+        description = "Deletes a Todoist task",
+        icon = "todo.svg",
+        comment = true,
+        text_color = "#7B848B",
+        background_color =  "#a6a6a6")
 
 
 public class DeleteTask {

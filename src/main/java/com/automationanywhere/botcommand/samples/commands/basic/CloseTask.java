@@ -19,10 +19,15 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
-        //Unique name inside a package and label to display.
-        name = "CloseTask", label = "Close Task",
-        node_label = "Closes task in session {{sessionName}}", description = "Closes a Todoist task",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6")
+        name = "CloseTask",
+        label = "Close Task",
+        node_label = "Closes task in session {{sessionName}}",
+        group_label = "Tasks",
+        description = "Closes a Todoist task",
+        icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B" ,
+        background_color =  "#a6a6a6")
 
 
 public class CloseTask {

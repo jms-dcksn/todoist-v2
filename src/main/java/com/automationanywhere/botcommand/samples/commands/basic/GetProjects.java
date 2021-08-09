@@ -35,10 +35,17 @@ import org.json.simple.parser.*;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "GetProjects", label = "Get Projects",
-        node_label = "Get table of projects in session {{sessionName}}", description = "Gets Todoist projects", icon = "todo.svg",
-        comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6",
-        return_label = "Assign output to a table variable", return_type = DataType.TABLE, return_description = "Outputs project ID's and Names in a table")
+        name = "GetProjects",
+        label = "Get Projects",
+        node_label = "Get table of projects in session {{sessionName}}",
+        group_label = "Projects",
+        description = "Gets Todoist projects", icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B",
+        background_color =  "#a6a6a6",
+        return_label = "Assign output to a table variable",
+        return_type = DataType.TABLE,
+        return_description = "Outputs project ID's and Names in a table")
 
 
 public class GetProjects {

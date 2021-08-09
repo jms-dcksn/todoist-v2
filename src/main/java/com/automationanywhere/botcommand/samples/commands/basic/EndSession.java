@@ -22,8 +22,15 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
  */
 
 @BotCommand
-@CommandPkg(label = "End Session", name = "EndTodoistSession", description = "Session End", icon = "todo.svg", node_label = "End Session {{sessionName}}",
-        comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6")
+@CommandPkg(label = "End Session",
+        name = "EndTodoistSession",
+        description = "Session End",
+        icon = "todo.svg",
+        node_label = "End Session {{sessionName}}",
+        group_label = "Admin",
+        comment = true ,
+        text_color = "#7B848B" ,
+        background_color =  "#a6a6a6")
 
 public class EndSession {
 

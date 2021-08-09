@@ -23,9 +23,15 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "UpdateTask", label = "Update Task",
-        node_label = "Update task in session {{sessionName}}", description = "Updates a Todoist task",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6")
+        name = "UpdateTask",
+        label = "Update Task",
+        node_label = "Update task in session {{sessionName}}",
+        group_label = "Tasks",
+        description = "Updates a Todoist task",
+        icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B" ,
+        background_color =  "#a6a6a6")
 
 
 public class UpdateTask {

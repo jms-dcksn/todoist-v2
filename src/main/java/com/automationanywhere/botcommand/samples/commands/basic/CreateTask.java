@@ -28,10 +28,17 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "CreateTask", label = "Create Task",
-        node_label = "Create a new task in session {{sessionName}}", description = "Creates a new Todoist task",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6",
-        return_label = "Assign output to a dictionary variable", return_type = DataType.DICTIONARY,
+        name = "CreateTask",
+        label = "Create Task",
+        node_label = "Create a new task in session {{sessionName}}",
+        group_label = "Tasks",
+        description = "Creates a new Todoist task",
+        icon = "todo.svg",
+        comment = true,
+        text_color = "#7B848B",
+        background_color =  "#a6a6a6",
+        return_label = "Assign output to a dictionary variable",
+        return_type = DataType.DICTIONARY,
         return_description = "Outputs the id and url of the task with keys 'id' and 'url'")
 
 
@@ -77,29 +84,6 @@ public class CreateTask {
 
         TodoistServer todoistServer = (TodoistServer) this.sessionMap.get(sessionName);
         String token = todoistServer.getToken();
-
-        /*String url = "https://api.todoist.com/rest/v1/tasks";
-        String auth = "Bearer " + token;
-        JSONObject jsonBody = new JSONObject();
-
-        jsonBody.put("content", taskName);
-        jsonBody.put("project_id", lProjId);
-        jsonBody.put("due_date", dueDate);
-        jsonBody.put("priority", numPrio);
-        String response = "";
-
-        try {
-            response = HTTPRequest.POST(auth, url, jsonBody.toString());
-            if (response.contains("An error occurred")) {
-                throw new BotCommandException(response);
-            }
-        }
-        catch(Exception e){
-            throw new BotCommandException("Something went wrong with the request to Todoist server. Please try again.");
-        }
-
-        Object obj = new JSONParser().parse(response);
-        JSONObject details = (JSONObject) obj;*/
 
         JSONObject details = TodoistTaskActions.CreateTask(token, taskName, lProjId, dueDate, numPrio);
 

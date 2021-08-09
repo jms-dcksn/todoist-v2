@@ -30,10 +30,17 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "GetProjectId", label = "Get Project ID",
-        node_label = "Get a project ID in session {{sessionName}}", description = "Returns the ID of a project, given the name", icon = "todo.svg",
-        comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6",
-        return_label = "Assign output to a string variable", return_type = DataType.STRING, return_description = "Outputs the ID of the project")
+        name = "GetProjectId",
+        label = "Get Project ID",
+        node_label = "Get a project ID in session {{sessionName}}",
+        group_label = "Projects",
+        description = "Returns the ID of a project, given the name", icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B" ,
+        background_color =  "#a6a6a6",
+        return_label = "Assign output to a string variable",
+        return_type = DataType.STRING,
+        return_description = "Outputs the ID of the project")
 
 
 public class GetProjectId {

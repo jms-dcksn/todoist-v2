@@ -31,10 +31,17 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
 //CommandPks adds required information to be displayable on GUI.
 @CommandPkg(
         //Unique name inside a package and label to display.
-        name = "CreateProject", label = "Create Project",
-        node_label = "Create a new project in session {{sessionName}}", description = "Creates a new Todoist project",
-        icon = "todo.svg", comment = true ,  text_color = "#7B848B" , background_color =  "#a6a6a6",
-        return_label = "Assign output to a dictionary variable", return_type = DataType.DICTIONARY,
+        name = "CreateProject",
+        label = "Create Project",
+        node_label = "Create a new project in session {{sessionName}}",
+        group_label = "Projects",
+        description = "Creates a new Todoist project",
+        icon = "todo.svg",
+        comment = true ,
+        text_color = "#7B848B",
+        background_color =  "#a6a6a6",
+        return_label = "Assign output to a dictionary variable",
+        return_type = DataType.DICTIONARY,
         return_description = "Outputs the ID of the project")
 
 public class CreateProject {
