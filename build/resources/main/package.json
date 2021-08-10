@@ -4,8 +4,8 @@
     "description": "[[description]]",
     "group": "com.automationanywhere",
     "artifactName": "Todoist",
-    "packageVersion": "1.2.0-20210809-160306",
-    "codeVersion": "1.2.0-20210809-160306",
+    "packageVersion": "1.2.0-20210810-093111",
+    "codeVersion": "1.2.0-20210810-093111",
     "author": "",
     "commands": [
         {
@@ -632,6 +632,8 @@
             "minimumBotAgentVersion": "20.11",
             "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.TaskTriggerTrigger",
             "icon": "todo.svg",
+            "textColor": "#7B848B",
+            "backgroundColor": "#a6a6a6",
             "returnType": "RECORD",
             "returnSubtype": "UNDEFINED",
             "returnLabel": "",

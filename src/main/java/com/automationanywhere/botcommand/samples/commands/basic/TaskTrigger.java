@@ -27,8 +27,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
 @BotCommand(commandType = BotCommand.CommandType.Trigger)
-@CommandPkg(label = "Task Trigger", description = "Task Trigger", icon = "todo.svg", name = "todoisttasktrigger",
-        return_type = RECORD, return_name = "TriggerData", return_description = "Available keys: triggerType, id")
+@CommandPkg(label = "Task Trigger",
+        description = "Task Trigger",
+        icon = "todo.svg",
+        text_color = "#7B848B",
+        background_color =  "#a6a6a6",
+        name = "todoisttasktrigger",
+        return_type = RECORD,
+        return_name = "TriggerData",
+        return_description = "Available keys: triggerType, id")
 
 public class TaskTrigger {
 

@@ -42,7 +42,7 @@ import static com.automationanywhere.commandsdk.model.DataType.STRING;
         background_color =  "#a6a6a6",
         return_label = "Assign output to a dictionary variable",
         return_type = DataType.DICTIONARY,
-        return_description = "Outputs the ID of the project")
+        return_description = "Outputs ID and URL with keys 'id' and 'url'")
 
 public class CreateProject {
     @Sessions
